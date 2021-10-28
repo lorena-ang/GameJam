@@ -22,6 +22,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue){
     	// Debug.Log("Starting conv with " + dialogue.charName);
+    	Time.timeScale = 0f;
     	dialogueBox.SetActive(true);
     	nameText.text = dialogue.charName;
     	sentences.Clear();
@@ -50,15 +51,19 @@ public class DialogueManager : MonoBehaviour
     	foreach(char letter in sentence.ToCharArray()){
     		dialogueText.text += letter;
     		// yield return null;
-    		yield return new WaitForSeconds(0.02f);
+    		// yield return new WaitForSeconds(0.02f);
+    		yield return new WaitForSecondsRealtime(0.02f);
     	}
-    	yield return new WaitForSeconds(1.0f);
+    	// yield return new WaitForSeconds(1.0f);
+    	yield return new WaitForSecondsRealtime(1.0f);
 		TypeSound.Stop();    	
     	// TypeSound.Stop();
     }
 
     public void EndDialogue(){
     	Debug.Log("End of conv");
+    	Time.timeScale = 1f;
+
     	if(TypeSound.isPlaying){
     		TypeSound.Stop();
     	}
