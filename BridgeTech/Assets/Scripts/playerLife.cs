@@ -6,13 +6,10 @@ using UnityEngine.UI;
 public class playerLife : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private bool dead = false, enabledCollider = true;
     private float life = 100;
     public GameObject v1, v2, v3, v4, v5, v6;
-    //Animator animator;
     void Start()
     {
-        //animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         setLife();
     }
@@ -20,33 +17,31 @@ public class playerLife : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collider)
     {
         string collisionObj = collider.gameObject.tag;
-        if (collisionObj == "Enemy" & enabledCollider)
+        if (collisionObj == "Enemy")
         {
             WhenCollision();
         }
-        else if (collisionObj == "Health" & enabledCollider)
+        else if (collisionObj == "Health")
         {
             life += life == 100 ? 0:20;
             setLife();
+            //Instantiate(WinLifeSound);
             Destroy(collider.gameObject);
         }
     }
     public void WhenCollision()
     {
+        bool dead = false;
         if (life > 0)
         {
             life -= 20;
             StartCoroutine(WaitCoroutine());
-            //animator.SetBool("damage", true);
             //Instantiate(DeathSound);
         }
         if (life <= 0)
         {
-            dead = true; enabledCollider = false;
-            //animator.SetBool("dead", dead);
             //Instantiate(GameOverSound);
-
-            //AQUI PERDISTE
+            //AQUI PERDISTE, CARGAR ESCENA
             //GameObject.Find("Canvas").GetComponent<Scenes>().defeat();
         }
         setLife();
