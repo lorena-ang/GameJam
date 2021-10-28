@@ -16,10 +16,11 @@ public class playerMovement : MonoBehaviour
     public float facingRight = 1;
 
     float move;
+    bool isHiding;
     // Start is called before the first frame update
     void Start()
     {
-
+        isHiding = false;
     }
 
     // Update is called once per frame
@@ -35,6 +36,16 @@ public class playerMovement : MonoBehaviour
             animator.SetBool("jump", true);
             jump();
         }
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, 10.0f, LayerMask.GetMask("Door"));
+        if(Input.GetKeyDown(KeyCode.UpArrow) && hit.collider != null){
+            Hide();
+            Debug.Log("Z collide G");
+        } 
+        if(Input.GetKeyDown(KeyCode.DownArrow) && isHiding == true){
+            Unhide();            
+        } 
+               
 
         scale = transform.localScale;
         if (direction < 0)
@@ -73,6 +84,29 @@ public class playerMovement : MonoBehaviour
         }
         return false;
 
+    }
+
+    private void Hide(){
+        Vector3 position = rb.position;
+        //float vertical = Input.GetAxis("Vertical");
+
+        //position.y = position.y + vertical * Time.fixedDeltaTime * speed;       
+        position.y = position.y + 10.0f * Time.fixedDeltaTime * speed;       
+
+        rb.MovePosition(position);
+        gameObject.SetActive(false);
+        isHiding = true;
+        
+    }
+    private void Unhide(){
+        Vector3 position = rb.position;
+        gameObject.SetActive(true);
+        //float vertical = Input.GetAxis("Vertical");
+        //position.y = position.y + vertical * Time.fixedDeltaTime * speed;       
+        position.y = position.y - 10.0f * Time.fixedDeltaTime * speed;
+        rb.MovePosition(position);
+        isHiding = false;
+        
     }
     private void OnCollisionEnter2D(Collision2D collision) {
         if( collision.gameObject.tag == "Ground" ){
