@@ -12,6 +12,9 @@ public class playerMovement : MonoBehaviour
     public Transform feet;
     public LayerMask groundLayers;
 
+    Vector3 scale;
+    public float facingRight = 1;
+
     float move;
     // Start is called before the first frame update
     void Start()
@@ -22,7 +25,8 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        move = Input.GetAxisRaw("Horizontal") * speed;
+        float direction = Input.GetAxisRaw("Horizontal");
+        move = direction * speed;
 
         animator.SetFloat("speed", Mathf.Abs(move));
 
@@ -30,6 +34,18 @@ public class playerMovement : MonoBehaviour
         {
             animator.SetBool("jump", true);
             jump();
+        }
+
+        scale = transform.localScale;
+        if (direction < 0)
+        {
+            facingRight = scale.x = -1;
+            transform.localScale = scale;
+        }
+        else if(direction > 0)
+        {
+            facingRight = scale.x = 1;
+            transform.localScale = scale;
         }
 
     }
