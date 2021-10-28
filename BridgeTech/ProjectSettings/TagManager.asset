@@ -14,8 +14,8 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
+  - Gameplay
+  - Background
   - 
   - 
   - 
@@ -41,12 +41,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 4061817383
+  - name: Gameplay
+    uniqueID: 2374153071
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Piso
     uniqueID: 3928020133
+    locked: 0
+  - name: Background
+    uniqueID: 4061817383
     locked: 0
