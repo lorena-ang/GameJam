@@ -4,51 +4,40 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class MenuOpciones : MonoBehaviour
+public class OpcionesJuego : MonoBehaviour
 {
+
 	public AudioMixer audioMixer;
 	public Slider sliderVolumen;
 	public Dropdown dropDownGraficas;
 	public Resolution[] resolutions;
 	public Dropdown dropDownRes;
+	public Toggle toggleFullScreen;
 
 	void Start(){
-		Debug.Log("Comenzando setup de configs...");
+		Debug.Log("Comenzando en juego setup de configs...");
 		sliderVolumen.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
 
-		dropDownGraficas.value = 2;
-		QualitySettings.SetQualityLevel(2);
 		dropDownGraficas.value = PlayerPrefs.GetInt("QualitySettings", 2);
 
-		resolutions = Screen.resolutions;
-		GameManagerSingleton.Instance.resolutions = resolutions;
 		dropDownRes.ClearOptions();
 		
-		List<string> options = new List<string>();
-		int currentResolution = 0;
-		for(int i = 0; i < resolutions.Length; ++i){
-			string buffer = resolutions[i].width + " x " + resolutions[i].height;
-			options.Add(buffer);
-
-			if(resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height){
-				currentResolution = i;
-				GameManagerSingleton.Instance.currentResolution = currentResolution;
-			}
-		}
-		GameManagerSingleton.Instance.options = options;
-
-		dropDownRes.AddOptions(options);
-		dropDownRes.value = currentResolution;
+		dropDownRes.AddOptions(GameManagerSingleton.Instance.options);
+		dropDownRes.value = GameManagerSingleton.Instance.currentResolution;
 		dropDownRes.RefreshShownValue();
 
-		Screen.fullScreen = true;
-		GameManagerSingleton.Instance.isFullScreen = true;
+		// Debug.Log("Checando volume " + PlayerPrefs.GetFloat("MusicVolume", 0.75f));
+		// Debug.Log("Checando volume " + PlayerPrefs.GetInt("QualitySettings", 2));
+		// Debug.Log("Checando fullscreen " + GameManagerSingleton.Instance.isFullScreen);
+		// Debug.Log("Checando res " + GameManagerSingleton.Instance.currentResolution);
 
-		Debug.Log("Terminando setup de configs...");
+		toggleFullScreen.isOn = GameManagerSingleton.Instance.isFullScreen;
+		Screen.fullScreen = GameManagerSingleton.Instance.isFullScreen;
+
+		Debug.Log("Terminando en juego setup de configs...");
 
 	}
-
-    public void SetVolume(float volume){
+     public void SetVolume(float volume){
 		audioMixer.SetFloat("volume", Mathf.Log10(volume) * 20);
 		PlayerPrefs.SetFloat("MusicVolume", volume);
     }
@@ -65,7 +54,7 @@ public class MenuOpciones : MonoBehaviour
 
     public void SetResolution(int i){
     	GameManagerSingleton.Instance.currentResolution = i;
-    	Resolution res = resolutions[i];
+    	Resolution res = GameManagerSingleton.Instance.resolutions[i];
     	Screen.SetResolution(res.width, res.height, Screen.fullScreen);
     }
 }
