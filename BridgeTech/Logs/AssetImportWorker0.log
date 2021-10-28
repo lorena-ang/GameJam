@@ -475,3 +475,67 @@ Received Import Request.
 Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95df672b4aaba54310d34c83eef51bb8') in 0.004788 seconds 
   Import took 0.011082 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 1073.456383 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3aa8742daa1876524f1394adf0cff6b6') in 0.005239 seconds 
+  Import took 0.012074 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 538.061017 seconds.
+  path: Assets/Sprites/Decoration/Materials
+  artifactKey: Guid(3a3cd514d3b7943cfa4ab3d69816a252) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Decoration/Materials using Guid(3a3cd514d3b7943cfa4ab3d69816a252) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '064ab42a8a976f67be8e7c066a9b0da8') in 0.001527 seconds 
+  Import took 0.008491 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.039547 seconds.
+  path: Assets/Sprites/Decoration/Materials/Foco.mat
+  artifactKey: Guid(08aac4eeb7edb429fbe3b8e985b9ba7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Decoration/Materials/Foco.mat using Guid(08aac4eeb7edb429fbe3b8e985b9ba7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03bb3588f5058399f3a6211e3cf095ff') in 0.323804 seconds 
+  Import took 0.327241 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002192 seconds.
+  path: Assets/Sprites/Decoration/Materials/Sangre3.mat
+  artifactKey: Guid(3f102a76ca8e44049a0aae721ab144ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Decoration/Materials/Sangre3.mat using Guid(3f102a76ca8e44049a0aae721ab144ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7291795b2a719bf765cf29cd2d32751b') in 0.010224 seconds 
+  Import took 0.013401 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 514.930862 seconds.
+  path: Assets/Sprites/Decoration/DecoTiles.prefab
+  artifactKey: Guid(fa6e9939827ec427e93c442ac8550cfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Decoration/DecoTiles.prefab using Guid(fa6e9939827ec427e93c442ac8550cfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66394f8f040f826a4f9946651d5f23a1') in 0.046866 seconds 
+  Import took 0.062418 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.523495 seconds.
+  path: Assets/Sprites/Decoration/DecoTiles.prefab
+  artifactKey: Guid(fa6e9939827ec427e93c442ac8550cfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Decoration/DecoTiles.prefab using Guid(fa6e9939827ec427e93c442ac8550cfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35221636a8920d43deac4ec51a6ab4cd') in 0.015082 seconds 
+  Import took 0.019571 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 304.432338 seconds.
+  path: Assets/Sprites/Decoration/DecoTiles.prefab
+  artifactKey: Guid(fa6e9939827ec427e93c442ac8550cfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Decoration/DecoTiles.prefab using Guid(fa6e9939827ec427e93c442ac8550cfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '157c0b378e52a02c198f67133633102a') in 0.038673 seconds 
+  Import took 0.058730 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 365.131360 seconds.
+  path: Assets/Sprites/Decoration/DecoTiles.prefab
+  artifactKey: Guid(fa6e9939827ec427e93c442ac8550cfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Decoration/DecoTiles.prefab using Guid(fa6e9939827ec427e93c442ac8550cfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9545976413f77f1db7b6c5f5d3ca73fc') in 0.028363 seconds 
+  Import took 0.032228 seconds .
+
