@@ -191,7 +191,6 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: d9be9a044c06f46b1a17ad2259048530, type: 2}
   sliderVolumen: {fileID: 769972380}
   dropDownGraficas: {fileID: 1667250774}
-  dropDownRes: {fileID: 0}
 --- !u!4 &38040282
 Transform:
   m_ObjectHideFlags: 0
@@ -1285,7 +1284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &344868285
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1326,7 +1325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &375666739
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2294,7 +2293,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3535,8 +3534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631258482ea144274b12744c3e4de8a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  options: []
-  currentResolution: 0
   isFullScreen: 0
 --- !u!4 &1028087851
 Transform:
@@ -5584,7 +5581,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
