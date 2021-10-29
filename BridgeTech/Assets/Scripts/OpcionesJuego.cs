@@ -10,21 +10,21 @@ public class OpcionesJuego : MonoBehaviour
 	public AudioMixer audioMixer;
 	public Slider sliderVolumen;
 	public Dropdown dropDownGraficas;
-	public Resolution[] resolutions;
-	public Dropdown dropDownRes;
+	// public Resolution[] resolutions;
+	// public Dropdown dropDownRes;
 	public Toggle toggleFullScreen;
 
 	void Start(){
-		Debug.Log("Comenzando en juego setup de configs...");
+		// Debug.Log("Comenzando en juego setup de configs...");
 		sliderVolumen.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
 
 		dropDownGraficas.value = PlayerPrefs.GetInt("QualitySettings", 2);
 
-		dropDownRes.ClearOptions();
+		// dropDownRes.ClearOptions();
 		
-		dropDownRes.AddOptions(GameManagerSingleton.Instance.options);
-		dropDownRes.value = GameManagerSingleton.Instance.currentResolution;
-		dropDownRes.RefreshShownValue();
+		// dropDownRes.AddOptions(GameManagerSingleton.Instance.options);
+		// dropDownRes.value = GameManagerSingleton.Instance.currentResolution;
+		// dropDownRes.RefreshShownValue();
 
 		// Debug.Log("Checando volume " + PlayerPrefs.GetFloat("MusicVolume", 0.75f));
 		// Debug.Log("Checando volume " + PlayerPrefs.GetInt("QualitySettings", 2));
@@ -34,7 +34,7 @@ public class OpcionesJuego : MonoBehaviour
 		toggleFullScreen.isOn = GameManagerSingleton.Instance.isFullScreen;
 		Screen.fullScreen = GameManagerSingleton.Instance.isFullScreen;
 
-		Debug.Log("Terminando en juego setup de configs...");
+		// Debug.Log("Terminando en juego setup de configs...");
 
 	}
      public void SetVolume(float volume){
@@ -52,9 +52,9 @@ public class OpcionesJuego : MonoBehaviour
     	GameManagerSingleton.Instance.isFullScreen = status;
     }
 
-    public void SetResolution(int i){
-    	GameManagerSingleton.Instance.currentResolution = i;
-    	Resolution res = GameManagerSingleton.Instance.resolutions[i];
-    	Screen.SetResolution(res.width, res.height, Screen.fullScreen);
-    }
+    // public void SetResolution(int i){
+    // 	GameManagerSingleton.Instance.currentResolution = i;
+    // 	Resolution res = GameManagerSingleton.Instance.resolutions[i];
+    // 	Screen.SetResolution(res.width, res.height, Screen.fullScreen);
+    // }
 }
