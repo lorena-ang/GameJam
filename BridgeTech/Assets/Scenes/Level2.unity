@@ -14246,11 +14246,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9025354959428916290, guid: 5f77e8a216e78124f919411eea304ef0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -90.82051
+      value: -90.81751
       objectReference: {fileID: 0}
     - target: {fileID: 9025354959428916290, guid: 5f77e8a216e78124f919411eea304ef0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.04064393
+      value: -0.040643454
       objectReference: {fileID: 0}
     - target: {fileID: 9025354959428916290, guid: 5f77e8a216e78124f919411eea304ef0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14963,7 +14963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1373110805505734794, guid: 566c93ebaa8d32d4d8c11c5e6ff906f2, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3439933441572768616, guid: 566c93ebaa8d32d4d8c11c5e6ff906f2, type: 3}
       propertyPath: m_Size.x
@@ -16294,7 +16294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2058154828}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Doors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
