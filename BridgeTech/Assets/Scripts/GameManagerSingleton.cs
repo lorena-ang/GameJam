@@ -8,9 +8,9 @@ public class GameManagerSingleton : MonoBehaviour
     public static GameManagerSingleton Instance;
     // public float volume;
     // public int quality;
-    public List<string> options;
-    public Resolution[] resolutions;
-    public int currentResolution;
+    // public List<string> options;
+    // public Resolution[] resolutions;
+    // public int currentResolution;
     public bool isFullScreen;
 
     private void Awake(){
