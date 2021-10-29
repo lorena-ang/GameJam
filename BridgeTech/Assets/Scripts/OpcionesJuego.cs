@@ -15,7 +15,7 @@ public class OpcionesJuego : MonoBehaviour
 	public Toggle toggleFullScreen;
 
 	void Start(){
-		Debug.Log("Comenzando en juego setup de configs...");
+		// Debug.Log("Comenzando en juego setup de configs...");
 		sliderVolumen.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
 
 		dropDownGraficas.value = PlayerPrefs.GetInt("QualitySettings", 2);
@@ -34,7 +34,7 @@ public class OpcionesJuego : MonoBehaviour
 		toggleFullScreen.isOn = GameManagerSingleton.Instance.isFullScreen;
 		Screen.fullScreen = GameManagerSingleton.Instance.isFullScreen;
 
-		Debug.Log("Terminando en juego setup de configs...");
+		// Debug.Log("Terminando en juego setup de configs...");
 
 	}
      public void SetVolume(float volume){
