@@ -26,6 +26,7 @@ public class DialogueManager : MonoBehaviour
     	dialogueBox.SetActive(true);
     	nameText.text = dialogue.charName;
     	sentences.Clear();
+        dialogueText.text = "";
     	foreach(string sentence in dialogue.sentences){
     		sentences.Enqueue(sentence);
     	}
