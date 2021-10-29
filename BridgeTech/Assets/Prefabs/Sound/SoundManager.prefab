@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da39715595993ec498d2adb0166c15c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: {fileID: 8300000, guid: 218b160b7258d2c4e93c3cbf6b6f2b42, type: 3}
-  recover: {fileID: 8300000, guid: 9191dba1a4d3bc74fae38ea5485e0263, type: 3}
+  damage: {fileID: 8300000, guid: dcae48c40bd8d42afb12f75c1510b930, type: 3}
+  recover: {fileID: 8300000, guid: 35324714683144564bafa20e7ae79212, type: 3}
   lost: {fileID: 8300000, guid: 3d60747554df43949826faf2622b64a8, type: 3}
-  audioSrc: {fileID: 0}
+  audioSrc: {fileID: 250255264247854646, guid: 566c93ebaa8d32d4d8c11c5e6ff906f2, type: 3}
