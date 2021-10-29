@@ -50,8 +50,8 @@ public class playerMovement : MonoBehaviour
             transform.localScale = scale;
         }
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, 10.0f, LayerMask.GetMask("Door"));
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.up)* 10f, Color.red);        
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, 15.0f, LayerMask.GetMask("Door"));
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.up)* 15f, Color.red);        
 
         if(Input.GetKeyDown(KeyCode.UpArrow) && hit.collider != null)
         {    
