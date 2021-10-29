@@ -6,8 +6,9 @@ public class EnemyMov : MonoBehaviour
 {
     Rigidbody2D rb;
     float lastStep = 0f;
-    float speed;
-    bool side;  //true = walks to left, false = walks to right
+    public float speed = 0.1f;
+    public bool side = false;  //true = walks to left, false = walks to right
+    public float limit = 3;
     GameObject mainCamera;
     
     // Start is called before the first frame update
@@ -15,8 +16,6 @@ public class EnemyMov : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         mainCamera = GameObject.Find("MainCamera");
-        speed = -0.1f;
-        side = true;
     }
 
     // Update is called once per frame
@@ -39,11 +38,11 @@ public class EnemyMov : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, 10.0f, LayerMask.GetMask("Player"));
         if(hit.collider != null && side == true ){
             speed = -0.3f;
-            Debug.Log("Z collide G");
+            //Debug.Log("Z collide G");
         }
         else{
             speed = -0.1f;
-            Debug.Log("Z NOT collide G");
+            //Debug.Log("Z NOT collide G");
         }
 
         // if(rb.position.x <= mainCamera.GetComponent<Transform>().position.x - 10){
@@ -52,12 +51,13 @@ public class EnemyMov : MonoBehaviour
     }
 
     private void SelectSide(){
-        if(rb.position.x < -5 ){
+
+        if(rb.position.x < -limit ){
             side = false;
             transform.rotation = Quaternion.Euler(0, -180, 0);
             //rb.rotation = 0f;            
         }
-        else if(rb.position.x > 5)
+        else if(rb.position.x > limit)
         {
             side = true;
             transform.rotation = Quaternion.Euler(0, 0, 0);

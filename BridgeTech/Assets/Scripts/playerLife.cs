@@ -5,15 +5,11 @@ using UnityEngine.UI;
 
 public class playerLife : MonoBehaviour
 {
-    private bool dead = false, enabledCollider = true;
     private Rigidbody2D rb;
-    public Text lifeText;
-    private string lifetxt = "Vida: ";
     private float life = 100;
-    //Animator animator;
+    public GameObject v1, v2, v3, v4, v5, v6;
     void Start()
     {
-        //animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         setLife();
     }
@@ -21,38 +17,34 @@ public class playerLife : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collider)
     {
         string collisionObj = collider.gameObject.tag;
-        if (collisionObj == "Enemy" & enabledCollider /*& collider.gameObject.GetComponent<Animator>().GetBool("dead") == false*/)
+        if (collisionObj == "Enemy")
         {
             WhenCollision();
         }
-        else if (collisionObj == "Health" & enabledCollider /*& collider.gameObject.GetComponent<Animator>().GetBool("dead") == false*/)
+        else if (collisionObj == "Health")
         {
-            life += life == 100 ? 0:25;
+            life += life == 100 ? 0:20;
             setLife();
+            //Instantiate(WinLifeSound);
             Destroy(collider.gameObject);
         }
     }
     public void WhenCollision()
     {
+        bool dead = false;
         if (life > 0)
         {
-            life -= 25;
+            life -= 20;
             StartCoroutine(WaitCoroutine());
-            //animator.SetBool("damage", true);
             //Instantiate(DeathSound);
         }
         if (life <= 0)
         {
-            dead = true; enabledCollider = false;
-            //animator.SetBool("dead", dead);
             //Instantiate(GameOverSound);
+            //AQUI PERDISTE, CARGAR ESCENA
             //GameObject.Find("Canvas").GetComponent<Scenes>().defeat();
         }
         setLife();
-    }
-    public void setLife()
-    {
-        lifeText.text = lifetxt + life.ToString();
     }
     IEnumerator WaitCoroutine()
     {
@@ -61,5 +53,62 @@ public class playerLife : MonoBehaviour
         rb.velocity = movement;
         yield return new WaitForSeconds(0.75f);
         rb.GetComponent<playerMovement>().enabled = true;
+    }
+    public void setLife()
+    {
+        if (life == 100)
+        {
+            v1.SetActive(false);
+            v2.SetActive(false);
+            v3.SetActive(false);
+            v4.SetActive(false);
+            v5.SetActive(false);
+            v6.SetActive(true);
+        }
+        else if (life == 80)
+        {
+            v1.SetActive(false);
+            v2.SetActive(false);
+            v3.SetActive(false);
+            v4.SetActive(false);
+            v5.SetActive(true);
+            v6.SetActive(false);
+        }
+        else if (life == 60)
+        {
+            v1.SetActive(false);
+            v2.SetActive(false);
+            v3.SetActive(false);
+            v4.SetActive(true);
+            v5.SetActive(false);
+            v6.SetActive(false);
+        }
+        else if (life == 40)
+        {
+            v1.SetActive(false);
+            v2.SetActive(false);
+            v3.SetActive(true);
+            v4.SetActive(false);
+            v5.SetActive(false);
+            v6.SetActive(false);
+        }
+        else if (life == 20)
+        {
+            v1.SetActive(false);
+            v2.SetActive(true);
+            v3.SetActive(false);
+            v4.SetActive(false);
+            v5.SetActive(false);
+            v6.SetActive(false);
+        }
+        else if (life == 0)
+        {
+            v1.SetActive(true);
+            v2.SetActive(false);
+            v3.SetActive(false);
+            v4.SetActive(false);
+            v5.SetActive(false);
+            v6.SetActive(false);
+        }
     }
 }
