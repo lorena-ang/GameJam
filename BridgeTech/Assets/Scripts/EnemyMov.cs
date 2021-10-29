@@ -2,6 +2,55 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public class Opossum : MonoBehaviour
+{
+    [SerializeField] float speed = 1f;
+
+    Rigidbody2D rbOpossum;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        rbOpossum = GetComponent<Rigidbody2D>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (facingRight())
+        {
+            // move right
+            rbOpossum.velocity = new Vector2(-speed, 0f);
+        }
+        else
+        {
+            // move left
+            rbOpossum.velocity = new Vector2(speed, 0f);
+        }
+
+    }
+
+    private bool facingRight()
+    {
+        return transform.localScale.x > Mathf.Epsilon;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        // Turn
+        if (collision.tag == "Enemy")
+        {
+            transform.localScale = new Vector2(-1 * transform.localScale.x, transform.localScale.y);
+        }
+    }
+
+    public float getX()
+    {
+        return transform.localScale.x;
+    }
+}
+
+/*
 public class EnemyMov : MonoBehaviour
 {
     Rigidbody2D rb;
@@ -82,3 +131,4 @@ public class EnemyMov : MonoBehaviour
         }
     }
 }
+*/
