@@ -25,22 +25,21 @@ public class playerLife : MonoBehaviour
         {
             life += life == 100 ? 0:20;
             setLife();
-            //Instantiate(WinLifeSound);
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().playRecover();
             Destroy(collider.gameObject);
         }
     }
     public void WhenCollision()
     {
-        bool dead = false;
         if (life > 0)
         {
             life -= 20;
             StartCoroutine(WaitCoroutine());
-            //Instantiate(DeathSound);
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().playDamage();
         }
         if (life <= 0)
         {
-            //Instantiate(GameOverSound);
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().playLost();
             //AQUI PERDISTE, CARGAR ESCENA
             //GameObject.Find("Canvas").GetComponent<Scenes>().defeat();
         }
