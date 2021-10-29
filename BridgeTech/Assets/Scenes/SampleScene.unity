@@ -9316,6 +9316,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 250255264247854644, guid: 566c93ebaa8d32d4d8c11c5e6ff906f2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 250255264247854647, guid: 566c93ebaa8d32d4d8c11c5e6ff906f2, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -9387,6 +9391,14 @@ PrefabInstance:
     - target: {fileID: 250255264247854654, guid: 566c93ebaa8d32d4d8c11c5e6ff906f2, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 250255264802772538, guid: 566c93ebaa8d32d4d8c11c5e6ff906f2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 250255264802772538, guid: 566c93ebaa8d32d4d8c11c5e6ff906f2, type: 3}
+      propertyPath: m_Offset.y
+      value: -1.59
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 566c93ebaa8d32d4d8c11c5e6ff906f2, type: 3}
