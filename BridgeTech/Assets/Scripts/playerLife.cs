@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerLife : MonoBehaviour
 {
@@ -43,6 +44,8 @@ public class playerLife : MonoBehaviour
             //Instantiate(GameOverSound);
             //AQUI PERDISTE, CARGAR ESCENA
             //GameObject.Find("Canvas").GetComponent<Scenes>().defeat();
+            SceneManager.LoadScene("GameOver");
+
         }
         setLife();
     }
