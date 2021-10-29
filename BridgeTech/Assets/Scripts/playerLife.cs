@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerLife : MonoBehaviour
 {
@@ -39,9 +40,7 @@ public class playerLife : MonoBehaviour
         }
         if (life <= 0)
         {
-            GameObject.Find("SoundManager").GetComponent<SoundManager>().playLost();
-            //AQUI PERDISTE, CARGAR ESCENA
-            //GameObject.Find("Canvas").GetComponent<Scenes>().defeat();
+            StartCoroutine(LostCoroutine());
         }
         setLife();
     }
@@ -52,6 +51,15 @@ public class playerLife : MonoBehaviour
         rb.velocity = movement;
         yield return new WaitForSeconds(0.75f);
         rb.GetComponent<playerMovement>().enabled = true;
+    }
+    IEnumerator LostCoroutine()
+    {
+        GameObject.Find("SoundManager").GetComponent<SoundManager>().playLost();
+        rb.GetComponent<playerMovement>().enabled = false;
+        Vector2 movement = new Vector2(-3.15f * rb.GetComponent<playerMovement>().facingRight, 5f);
+        rb.velocity = movement;
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("GameLost");
     }
     public void setLife()
     {
